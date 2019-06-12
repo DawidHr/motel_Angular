@@ -1,0 +1,36 @@
+<div class="main">
+    <div class="main_container">
+<h1>Rezerwacja pokoju</h1>
+<form  #form="ngForm" (ngSubmit)="addReservation(form)">
+<table>
+  <tr>
+    <td><p>Rezerwacja od:</p></td>
+    <td><input type="date" ngModel name="data_start" /></td>
+    <td><p>Rezerwacja do:</p></td>
+    <td><input type="date" ngModel name="data_end" /></td>
+  </tr>
+  <tr>
+    <td><p>Imię:</p></td>
+    <td><input type="text" ngModel name="firstname" /></td>
+    <td><p>Nazwisko:</p></td>
+    <td><input type="text" ngModel name="lastname" /></td>
+  </tr>
+  <tr>
+    <td><p>Płeć:</p></td>
+    <td>
+      <select ngModel name="sex">
+        <option value="Kobieta">Kobieta</option>
+        <option value="Mezczyzna">Mężczyzna</option>
+      </select>
+    </td>
+    <td><p>Pesel:</p></td>
+    <td><input type="number" minlength="11" maxlength="11" ngModel name="pesel" /></td>
+  </tr>
+  <tr>
+    <td colspan="4"><button class="roomButton btn btn-primary">Dodaj</button></td>
+  </tr>
+
+</table>
+</form>
+</div>
+</div>

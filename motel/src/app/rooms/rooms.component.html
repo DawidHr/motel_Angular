@@ -1,0 +1,73 @@
+<div class="main">
+    <app-navigation></app-navigation>
+  <div class="main_container">
+   
+    <div class="row">
+      <div class="col-lg-4" style="padding: 20px;">
+        <h2>Filtrowanie: </h2>
+        <table style="margin: 20px auto;">
+          <tr>
+              <td><label for="status">Status:</label></td>
+              <td>
+                  <select name="status" [(ngModel)] ="status" required>
+                      <option value="Wszystkie">Wszystkie</option>
+                      <option value="Wolne">Wolne</option>
+                      <option value="Zajęte">Zajęte</option>
+                    </select> 
+              </td>
+            </tr>
+            <tr>
+                <td><label for="category">Typ:</label></td>
+                <td>
+                    <select name="category" [(ngModel)] = "category">
+                        <option value="0">Wszystkie</option>
+                        <option *ngFor="let category of categoryList" value="{{ category.id }}">{{category.name}}</option>
+                      </select> 
+                </td>
+              </tr>
+              <tr>
+                  <td><label for="data_start">Data od:</label></td>
+                  <td>
+                      <input type="date" name="data_start"  [(ngModel)] = "data_start" required />
+                  </td>
+                </tr>
+                <tr>
+                    <td><label for="data_end">Data do:</label></td>
+                    <td>
+                        <input type="date" name="data_end" [(ngModel)] = "data_end" required />
+                    </td>
+                  </tr>
+              <tr>
+                  <td colspan="2"><input type="submit" value="SZUKAJ" (click)="filterAction()" style="margin-top: 50px;" class="btn btn-primary" /></td>
+                </tr>
+        </table>
+       
+     
+       
+        
+        
+      </div>
+      <div class="col-lg-8">
+          <div><h1>LISTA POKOI</h1></div>
+        <div *ngIf="roomsList.length == 0">
+          Brak Pokoi;
+        </div>
+        <div *ngIf="roomsList.length >= 1">
+          <div class="row" >
+              <div class="col-lg-4" *ngFor="let room of roomsList">
+                <div >
+                  <div class="image_container">
+                      <img src="{{ room.image }}" *ngIf="room.image" /> 
+                      <img src="kofdkok" *ngIf="!room.image" /> 
+                  </div>
+                  <h2>{{ room.name }}</h2>
+                  <button type="button" class="roomButton btn btn-primary" routerLink="/room/{{room.id}}">Przejdz</button>
+                </div>
+
+              </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

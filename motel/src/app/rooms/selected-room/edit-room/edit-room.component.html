@@ -1,0 +1,40 @@
+<div class="main">
+  <app-navigation></app-navigation>
+  <div class="main_container">
+    <h1>Edycja Pokoju</h1>
+    <form #form="ngForm" (ngSubmit)="editRoom(form)">
+   <table>
+     <tr>
+       <td>Nazwa Pokoju: </td>
+       <td><input type="text" value="{{ room.name }}" ngModel name="roomname" /></td>
+     </tr>
+     <tr>
+        <td>Cena:</td>
+        <td><input type="text" value="{{ room.price }}" ngModel name="price" /></td>
+      </tr>
+      <tr>
+          <td>Kategoria: </td>
+          <td>
+            <select ngModel name="category">
+                <option *ngFor="let category of categoryList" value="{{ category.id }}" >{{category.name}}</option>
+            </select>
+
+          </td>
+        </tr>
+        <tr>
+          <td>Adre url obrazka:</td>
+          <td><input type="text" value="{{ room.image }}" ngModel name="image_url"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">Description: </td>
+          </tr>
+          <tr>
+              <td colspan="2"><textarea ngModel name="description">{{ room.description }}</textarea></td>
+            </tr>
+              <tr>
+                  <td colspan="2"><button type="submit" class="roomButton btn btn-primary">Edytuj</button></td>
+                </tr>
+   </table>
+  </form>
+  </div>
+</div>

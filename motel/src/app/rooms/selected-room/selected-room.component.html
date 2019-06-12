@@ -1,0 +1,43 @@
+<div class="main">
+    <div class="main_container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div style="padding: 20px;">
+            <img src="{{ room.image }}"  style="width: 100%;"/>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div style="padding: 20px;">
+            <h2>{{ room.name }}</h2>
+            <table>
+              <tr>
+                <td class="headline">Cena: </td>
+                <td class="info"> {{ room.price }} zł</td>
+              </tr>
+              <tr>
+                  <td class="headline"> Kategoria: </td>
+                  <td class="info"> {{ category }}</td>
+                </tr>
+                <tr>
+                    <td class="headline" colspan="2">Description:</td>
+                  </tr>
+                  <tr>
+                      <td colspan="2" class="info">
+                        {{ room.description }}
+                      </td>
+                    </tr>
+
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-6">
+              <button type="button" class="roomButton btn btn-primary" routerLink = "/room/{{room.id}}/edit">Edytuj</button>
+          </div>
+          <div class="col-lg-6">
+              <button type="button" class="roomButton btn btn-primary" routerLink = "/room/{{room.id}}/reserv">Rezerwuj</button>
+          </div>
+        </div>
+    </div>
+</div>

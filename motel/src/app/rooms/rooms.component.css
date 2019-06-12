@@ -1,0 +1,39 @@
+img {
+    width: 100%;
+    height: auto;
+}
+.main {
+    background-color: rgba(0,0,0,0.5);
+    margin: 0 0;
+    padding: 0 0;
+    height: 100vh;
+}
+.main_container {
+    width: 80%;
+    background-color: rgba(177, 166, 166, 0.2);
+    padding: 20px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: 25px;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+.image_container {
+    height: 150px;
+    overflow: hidden;
+}
+.roomButton {
+    width: 100%;
+    margin-bottom: 20px;
+}
+input {
+    width: 100%;
+}
+select {
+    width: 100%;
+}

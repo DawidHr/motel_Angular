@@ -1,0 +1,38 @@
+.main {
+    background-color: rgba(0,0,0,0.5);
+    margin: 0 0;
+    padding: 0 0;
+    height: 100vh;
+}
+.main_container {
+    width: 80%;
+    background-color: rgba(177, 166, 166, 0.2);
+    padding: 20px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: 25px;
+}
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.headline {
+    color: red;
+    font-size: 22px;
+    padding-right: 50px;
+}
+.info {
+    font-size: 22px;
+    font-weight: 200;
+}
+tr {
+    height: 50px;
+}
+table {
+    margin: 0 auto;
+}
+button {
+    width: 100%;
+}
