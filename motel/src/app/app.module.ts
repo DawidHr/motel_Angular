@@ -9,6 +9,7 @@ import { EditRoomComponent } from './rooms/selected-room/edit-room/edit-room.com
 import { ReservRoomComponent } from './rooms/selected-room/reserv-room/reserv-room.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ReservationComponent } from './reservation/reservation.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     SelectedRoomComponent,
     EditRoomComponent,
     ReservRoomComponent,
-    NavigationComponent
+    NavigationComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,

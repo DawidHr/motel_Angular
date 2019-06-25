@@ -1,0 +1,65 @@
+<div class="main">
+  <app-navigation></app-navigation>
+  <div class="main_container">
+  
+    <div class="row">
+      <div class="col-lg-4" style="padding: 20px;">
+        <h2>Filtrowanie: </h2>
+        <table style="margin: 20px auto;">
+         
+              <tr>
+                  <td><label for="data_start">Data od:</label></td>
+                  <td>
+                      <input type="date" name="data_start"  [(ngModel)] = "data_start" required />
+                  </td>
+                </tr>
+                <tr>
+                    <td><label for="data_end">Data do:</label></td>
+                    <td>
+                        <input type="date" name="data_end" [(ngModel)] = "data_end" required />
+                    </td>
+                  </tr>
+              <tr>
+                  <td colspan="2"><input type="submit" value="SZUKAJ" (click)="filterAction()" style="margin-top: 50px;" class="btn btn-primary" /></td>
+                </tr>
+        </table>
+       
+     
+       
+        
+        
+      </div>
+      <div class="col-lg-8">
+          <div><h1>LISTA REZERWACJi</h1></div>
+        <div *ngIf="reservationList.length == 0">
+          Brak Pokoi;
+        </div>
+        <div *ngIf="reservationList.length >= 1">
+          <div class="row" >
+            <table>
+              <tr>
+                <td>Imię:</td>
+                <td>Nazwisko:</td>
+                <td>Pesel:</td>
+                <td>Płeć:</td>
+                <td>Rezerwacja od:</td>
+                <td>Rezerwacja do:</td>
+              </tr>
+              <tr *ngFor="let reservation of reservationList">
+                <td>{{  getCustomerName(reservation.customer_id)  }}</td>
+                <td>{{  getLastName(reservation.customer_id)  }}</td>
+                <td>{{  getPesel(reservation.customer_id)  }}</td>
+                <td>{{  getSex(reservation.customer_id)  }}</td>
+                <td>{{ reservation.start_data | date: "dd.MM.y" }}</td>
+                <td>{{ reservation.end_data | date: "dd.MM.y" }}</td>
+              </tr>
+            </table>
+              
+          </div>  
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
