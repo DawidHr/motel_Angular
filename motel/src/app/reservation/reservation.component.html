@@ -1,7 +1,4 @@
-<div class="main">
-  <app-navigation></app-navigation>
-  <div class="main_container">
-  
+
     <div class="row">
       <div class="col-lg-4" style="padding: 20px;">
         <h2>Filtrowanie: </h2>
@@ -16,7 +13,7 @@
                 <tr>
                     <td><label for="data_end">Data do:</label></td>
                     <td>
-                        <input type="date" name="data_end" [(ngModel)] = "data_end" required />
+                        <input type="date" name="data_end" [(ngModel)] = "data_end" />
                     </td>
                   </tr>
               <tr>
@@ -36,14 +33,14 @@
         </div>
         <div *ngIf="reservationList.length >= 1">
           <div class="row" >
-            <table>
+            <table  class="table table-sm table-dark" style="width: 90%;margin-top: 20px;">
               <tr>
-                <td>Imię:</td>
-                <td>Nazwisko:</td>
-                <td>Pesel:</td>
-                <td>Płeć:</td>
-                <td>Rezerwacja od:</td>
-                <td>Rezerwacja do:</td>
+                <td scope="col">Imię:</td>
+                <td scope="col">Nazwisko:</td>
+                <td scope="col">Pesel:</td>
+                <td scope="col">Płeć:</td>
+                <td scope="col">Rezerwacja od:</td>
+                <td scope="col">Rezerwacja do:</td>
               </tr>
               <tr *ngFor="let reservation of reservationList">
                 <td>{{  getCustomerName(reservation.customer_id)  }}</td>
@@ -61,5 +58,4 @@
     </div>
 
 
-  </div>
-</div>
+ 
